@@ -1,0 +1,33 @@
+.blue-shape{
+    position: relative;
+
+    &::after{
+        content: '';
+        display: block;
+        background-color: $soft-blue;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &--left-curve{
+        &::after{
+            border-top-left-radius: 100rem;
+            border-bottom-left-radius: 100rem;
+            top: 30%;
+            width: 75%;
+            height: 75%;
+            right: 0;
+        }
+    }
+
+    &--right-curve{
+        &::after{
+            border-top-right-radius: 100rem;
+            border-bottom-right-radius: 100rem;
+            top: 22%;
+            width: 75%;
+            height: 95%;
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.button{
+    border: 1.5px solid transparent;
+    outline: none;
+    padding: 1.3rem 2.5rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $grey;
+    box-shadow: 0 .5rem .4rem rgba($grey, .15);
+
+    @include respond(tablet-big) {
+        font-size: 1.4rem;
+        padding: 1.3rem 2rem;
+    }
+
+    &--red{
+        background-color: $soft-red;
+        color: $white;
+
+        &:hover{
+            background-color: $white;
+            border: 1.5px solid $soft-red;
+            color: $soft-red;
+        }
+    }
+
+    &--blue{
+        background-color: $soft-blue;
+        color: $white;
+
+        &:hover{
+            background-color: $white;
+            border: 1.5px solid $soft-blue;
+            color: $soft-blue;
+        }
+    }
+
+    &--grey{
+        background-color: rgba($grey, .1);
+        color: $dark-blue;
+
+        &:hover{
+            background-color: $white;
+            border: 1.5px solid $dark-blue;
+            color: $dark-blue;
+        }
+    }
+
+}

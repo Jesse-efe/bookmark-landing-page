@@ -1,0 +1,93 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == small-phone {
+        @media only screen and (max-width: 400px) { @content };
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 600px) { @content };
+    }
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 760px) { @content };
+    }
+    @if $breakpoint == tablet-big {
+        @media only screen and (max-width: 900px) { @content };
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 1200px) { @content };
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 1800) { @content };
+    }
+}
+
+@mixin active-composition-tab($target) {
+    // marks the tab with the $target id as current
+    & ~ .features__tabs > a[href*="#{$target}"]{
+        color: $dark-blue;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: -1px;
+            height: 90%;
+            border-bottom: 4px solid $soft-red;
+
+            @include respond (phone){
+                width: 40%;
+                left: 30%;
+            }
+        }
+    }
+}
+
+@mixin inactive-composition-tab($target) {
+    // removes the active tab indicator from the tab with the $target id
+    & ~ .features__tabs > a[href*="#{$target}"]{
+        color: $grey;
+        position: relative;
+
+        &::after{
+            display: none;
+        }
+    }
+}
+
+@mixin composition-mobile{
+    // makes the image in features composition look better
+    & .composition__image{
+        @include respond(phone){
+            transform: scale(1.25);
+        }
+
+        &-box{
+            @include respond(phone){
+                text-align: center;
+            }
+        }
+    }
+}
+
+@mixin list-desktop{
+    display: inline-block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    cursor: pointer;
+
+    &:hover{
+        color: $soft-red;
+    }
+}
+
+@mixin display-block-mobile {
+    @include respond(small-phone){
+        display: block;
+        margin: 0 auto;
+        width: 75%;
+    }
+}
+

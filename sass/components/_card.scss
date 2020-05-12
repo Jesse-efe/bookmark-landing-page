@@ -1,0 +1,31 @@
+.card{
+    width: 27rem;
+    box-shadow: 0rem .8rem 1rem rgba($grey, .2);
+    border-radius: 1.4rem;
+    text-align: center;
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+
+    &__logo{
+        height: 10rem;
+    }
+
+    &__heading{
+        margin: 3.3rem 0 1.1rem 0;
+    }
+
+    &__version{
+        display: block;
+        font-size: 1.3rem;
+        color: $grey;
+        margin-bottom: 3.5rem;
+    }
+
+    &__dots{
+        width: 100%;
+    }
+
+    &__button{
+        margin: 2.2rem 0 2.2rem 0;
+    }
+}
